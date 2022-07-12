@@ -1,0 +1,10 @@
+meto datos
+1º línea
+mas líneas
+mas líneas 3
+
+			GIT BISECT
+hago una bisección con :
+1º git bisect start
+2º git bisect good nº_de_version_donde_funcionaba_bien
+3º git bisect bad nº_de_version_donde_funcionaba_mal

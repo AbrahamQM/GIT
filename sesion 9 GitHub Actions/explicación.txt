@@ -1,0 +1,14 @@
+			GitHub Actions
+
+Es la versión de GitHub de CI/CD
+
+GITHUB ACTIONS: Es la respuesta de GitHub al crecimiento de sistemas de CI/CD
+*En esencia es un sistema CI/CD hecho dentro del propio github.
+
+https://github.com/actions
+
+https://docs.github.com/es/actions/learn-github-actions/understanding-github-actions
+
+
+
+

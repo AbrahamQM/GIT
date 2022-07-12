@@ -1,0 +1,20 @@
+git stash: es un sinonimo de (reservar git)
+-Crea una especie de trabajo en limpio, paralelo sin tener que hacer un comiit del trabajo que teníamos hasta el momento.
+-Después, podemos seguir trabajando con otro documento o lo que sea.
+-Cuando terminemos con ese trabajo, hacemos el commit y push(en caso de necesitarlo)
+-Ejecutaremos "git stash apply" para volver al trabajo que hemos "stasheado"
+
+---Los stashes son apilables, podemos tener varios a la vez, 
+-Para ver todos los stashes que tengo hechos: git stash list
+
+--GIT STASH POP: Aplica el stash actual
+-Si tengo SOLO UN STASH , debo aplicarlo usando "git stash apply"
+
+--GIT STASH APPLY: Aplica todos los stashes
+-Si tengo VARIOS STASHES abiertos, aplicamos el stash actual con: "git stash pop" y seguimos trabajando con el que estaba por debajo.
+
+---Despues de haber aplicado TODOS LOS STASHES con "git stash apply", TENGO QUE ELIMINAR LOS STASHES APLICADOS
+--git stash clear
+
+---CREAR UN STASH CON UN NOMBRE CONCRETO:
+--git stash save "el nombre que queramos"

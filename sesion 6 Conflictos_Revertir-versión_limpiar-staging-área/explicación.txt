@@ -1,0 +1,95 @@
+************COMO SE GENERAN LOS CONFLICTOS:
+
+
+--Cuando dos ramas coinciden al modifican archivo/s a la vez y los intentamos mergear (unir)
+--Cuando el origen (remoto) ha sufrido cambios que yo no tengo en mi repositorio local 
+al intentar subir nuestros cambios con git push
+
+************SOLUCIÓN
+
+--1º hay que editar el archivo para que quede igual en las dos ramas.
+
+-1º Usamos comiteamos en local los cambios y al intentar enviarlos al repo central nos dará un conflicto, 
+indicando que debemos descargarnos el repositorio central y después unificar los cambios.
+
+-2º Hacemos "git pull" para intentar actualizar el original, y nos mostrará un conflicto.
+
+-3º Después con "git status" podemos ver los archivos con conflictos
+
+-4º Solucionamos los conflictos en local (ya nuestro archivo mostrará los caracteres especiales indicando cuales son los datos con conflictos)
+Debemos eliminar los caracteres especiales y quedarnos con el archivo tal como lo queremos DEFINITIVO
+
+-El profesor lo hace desde la terminal de mac con el comando "vi nombreDeArchivoConConflicto"
+-En windows se debería abrir al intentar hacer el merge de la rama. En un tutorial veo como hacerlo desde VSC 
+https://www.youtube.com/watch?v=LEIMYEQyFDk&ab_channel=Programaci%C3%B3nenespa%C3%B1ol
+
+--2º Ya podemos hacer el commit de como hemos dejado el fichero y despues enviarlo al origen con "git push"
+
+**todo se hizo desde la terminal, pero también podremos hacerlo con github, gitlab u otros servidores de git MUCHO MAS FÁCILMENTE
+
+
+
+
+*********COMANDOS PARA VOLVER A VERSIONES ANTERIORES ----------------
+***GIT CHECKOUT***GIT REVERT***GIT RESET
+Ver en: https://www.aunitz.net/diferencias-checkout-revert-reset/				
+
+-----------------------------------------GIT CHECKOUT---------------------------------------------------------------------
+***********Un checkout es una operación que mueve el puntero de referencia HEAD a un commit específico.
+
+--1º hacemos "git checkout nºDeCommitAlQueQueramosVolver"
+nos trasladará a una 'detached HEAD', que es un momento fuera de nuestra cabecera.
+
+--2º Para que los cambios no desaparezcan hay que crear una nueva rama "git checkout -b NombreDeNuevaRama"
+ahora tendremos una rama nueva que se encuentra en el commit que le hemos indicado en el 1º paso
+
+--3º Ahora podremos trabajar con el repositorio que había en el commit indicado.
+
+--4º Hay que hacer un pull request o un merge para unificar los cambios y las ramas.
+
+			NO ELIMINA LOS ARCHIVOS QUE PUDIERAN HABER EN LA RAMA PRINCIPAL
+
+
+
+----------------------------------------GIT REVERT---------------------------------------------------------------------
+***********Un revert es una operación que toma un commit específico y crea un nuevo commit con el contenido del commit especificado.
+
+--1º Hacemos "git revert nºDeCommitAlQueQueremosVolver"
+
+*Para revertir varios commits, se ponen los commits que queramos desacer en orde inverso, ej revertír commits del 5 al 7:
+git commit nºDelCommit7 nºDelCommit6 nºDelCommit5
+
+--2º Resolvemos los conflictos en caso de haberlos (igual que al principio de la sesión)
+
+--3º Comiteamos los cambios una vez resueltos los conflictos "git commit -am "comentario que sea"
+
+
+			NO ELIMINA LOS ARCHIVOS QUE PUDIERAN HABER EN LA RAMA PRINCIPAL
+
+
+
+---------------------------------------GIT RESET-------------------------------------------------------------------------------
+*************Un reset es una operación que toma un commit específico y restablece 
+el historial para que coincida con el estado del repositorio en ese commit específico.
+"git reset --opcionQueQueramos nºDeCommitAlQueQueremosVolver"
+
+*Hay 3 opciones:
+--soft-->trabaja sobre nuestra cabecera (head), no toca ni staging area ni elimina los ficheros involucrados
+
+--mixed-->trabaja en el staging area pero no cambia nada en nuestro ficheros
+
+--hard-->trabaja en el repositorio principal ***CUIDADO, MODIFICA EL HISTORIAL Y ELIMINA ARCHIVOS INVOLUCRADOS***
+
+
+**************COMANDOS DE LIMPIEZA
+//////////En Esta sesión también vemos el uso de:
+
+--git clean -i               --Para deshacer los cambios que no hayamos comiteado, mostrará un menú con las opciones que nos da
+
+--git rm nombreDelFichero    --Para dejar de trazar ficheros (lo contrario de git add) 
+
+
+
+
+
+

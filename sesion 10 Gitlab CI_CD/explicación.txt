@@ -1,0 +1,18 @@
+					GiLab CI/CD
+
+Es la versión de GitLab de CI/CD
+
+
+Hacemos lo mismo que en GitHub Actions
+
+-Subimos un repositorio
+
+-En el apartado CI/CD->Pipelines selecciona una plantilla según el tipo de código que esté usando
+
+-Editamos la plantilla según nos interese y la comiteamos
+documentación sobre editar la platilla o crear nuestro propio .github-ci.yml:  https://docs.gitlab.com/ee/ci/yaml/
+
+-En el vídeo, el profe configura el pipeline para maven, incluyendo archivos de configuración propios de maven y demás.
+
+
+-También configuramos algunos runners personales y hemos usado los que nos ofrece GitLab

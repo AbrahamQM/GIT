@@ -1,0 +1,61 @@
+Gestionar repositorios remotos
+
+*********El profesor se crea una cuenta en gitlab SaaS
+
+*********Crea un repositorio
+
+*********Clona un repositorio externo siguiento las instrucciones de la propia web
+
+*********Merge request
+-Crea ramas en local
+-las envia al repositorio remoto "git push origin nombreDeLaRamaLocal"
+-hace los cambios desde la rama nueva, git add de nuevos archivos creados y commits en local
+-envía los cambios de la nueva rama al repositorio remoto "git push origin"
+-desde el repositorio remoto, hace un merge request para unir de nuevo la rama que ha creado en local con la rama principal en remoto.
+
+*********Trabaja con una "tag"
+-Crea la etiqueta en uno de los commits en el repositorio remoto
+-Hace "git pull" para descargarse el repositorio remoto
+-En local mira las tags disponibles con "git tag"
+-Cambia a la etiqueta "tag" que quiere haciendo "git checkout nombreDeTag" y lo compreba con "git status"
+-Hace cambios y los comitea en local
+-Crea una nueva etiqueta para uno de esos commits 'git tag -a nombreDeEtiqueta -m "comentarios de la etiqueta" nºDeCommitAlQueLeAñadimosLaEtiqueta'
+-Envía los cambios a el repositorio remoto 'git push origin nombreDeEtiqueta'
+
+*********Clonar en un repositorio remoto de GitLab, otro repositorio remoto de GitHub
+-Importa el repositorio por url según instrucciones de la web de Gitlab. IMPORTANTE PONER .git AL FINAL DE LA URL
+-La opcion "mirror repositoy" actualiza automáticamente los cambios hechos en el repositorio orignal Github - al repositorio clonado Gitlab
+
+*********Gitignore
+Es un archivo que nos permite indicarle a git que ficheros no queremos que los gitee
+
+---Crea un archivo .gitignore
+-Hacer que ignore por ejemplo los archivos que terminen en .c añadiendo la línea '*.c' sin las comillas
+-Hacer que ignore un tipo de archivo.c pero sólo dentro de una carpeta que le indiquemos "nombreDeCarpeta/*.c" sin las comillas
+-Hacer que ignore un fichero concreto ej: credenciales.txt añadiendo otra línea que ponga 'credenciales.txt' sin las comillas
+-Poner comentarios añadiendo al principio # ES MUY RECOMENDABLE AGRUPAR LAS LÍNEAS POR TIPOS Y PONERLE COMENTARIOS
+-Negar un patrón para un archivo concreto, añadiendo ! !nombreDelElemento por ejemplo: !saluda.c
+-Hacer que ignore un directorio indicando el diretorio ej: docs/procesos  ignorará toda la carpeta procesos que esté dentro de docs
+-VER PLANTILLAS Y EJEMPLOS EN https://github.com/github/gitignore
+
+---Hacer que funcione el .gitignore
+-Añade el archivo .gitignore a github en local con "git add .gitignore"
+-Hace commit en local "git commit -am "mensaje ejemplo añado gitignore"
+-Envía los cambios al remoto "git push"
+SI DESPUÉS SEGUIMOS HACIENDO CAMBIOS EN EL .gitignore NO PODEMOS OLVIDARNOS DE COMITEARLOS Y ENVIARLOS AL SERVIDOR
+
+---Comprueba que funciona creando el archivo hola.c e intentando añadirlo a git "git add hola.c"
+-Le da un error.
+-Para obligarlo a gitear ese archivo, lo podremos forzar con -f "git add -f hola.c"
+
+---Elimnar tokens y repositorios
+-según el repositorio remoto.
+
+---Trabajar con varios remotos a la vez.
+-Despues de haber clonado el repositorio original, ejecutamos "git remote add nombreDelRepo rutaAlRemoto"
+ej: git remote add gitlab https://gitlab/abrahamqm/java_basico.git
+-Comprobar que se ha configurado el nuevo remoto correctamente, mirando en .git/config o ejecutando "git remote -v"
+-Configurar push a todos los remotos a la vez "git remote set-url --add --push all"
+-ANTES DE HACER UN PULL A TODOS, HAY QUE ASEGURARSE DE QUE TENEMOS LAS RAMAS CREADAS EN LOS REMOTOS (en caso de haber ramas diferentes)
+-Ejecutar un push a todos "git push all" DEBEMOS TENER CONFIGURADOS LOS TOKENS Y USUARIOS EN CASO DE NECESITARLOS
+ 

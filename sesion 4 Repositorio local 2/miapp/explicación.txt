@@ -1,0 +1,45 @@
+			GIT LOG --ONELINE --muestra los commit que hemos hecho en una sola línea cada uno	
+			GIT LOG --ONELINE --GRAPH --muestra los commit que hemos hecho de forma "gráfica" 		
+
+
+			GIT RESET -- vuelve hacia una versión anterior
+1º Mostramos las versiones con: git log --oneline
+2º-A Podemos usar el atributo --soft (revierte la cabezera de git a la version que queramos SIN MODIFICAR LOS ARCHIVOS AFECTADOS)
+git reset --soft nº_de_versión
+
+2º-B Podemos usar el atributo --hart (revierte el estado de los archivos al de la versión que le indiquemos)
+git reset --hard nº_de_versión
+
+
+
+
+			GIT BISECT -- marca una versión como buena o mala
+hago una bisección con : 
+1º git bisect start
+2º git bisect good nº_de_version_donde_funcionaba_bien
+3º git bisect bad nº_de_version_donde_funcionaba_mal
+
+			GIT BLAME -- muestra quien hizo cada cambio sobre un fichero concreto
+git blame nombre_del_fichero
+
+-------------------------RAMAS----------BRANCHES-------------------------------------
+
+SE UTILIZAN PARA: 
+-TENER MÚLTIPLES VERSIONES DE DESARROLLO 
+-PARA SOLUCIONAR UN FALLO CREAR UNA RAMA APARTE->SOLUCIONAR EL FALLO->UNIFICAR LAS RAMAS
+
+	GIT BRANCH -- muestra las ramas actuales
+
+	GIT BRANCH NOMBRE_DE_RAMA_NUEVA -- crea una nueva rama idéntica a la que estabamos usando HASTA ESE MOMENTO
+
+	GIT CHECKOUT NOMBRE_DE_RAMA_A_USAR -- cambiamos de rama a la que le indiquemos
+
+	GIT CHECKOUT -b NOMBRE_DE_RAMA_NUEVA -- cambia a la rama que le digamos, PERO SI NO EXISTÍA, TAMBIÉN LA CREA
+
+	GIT CHECKOUT -b NOMBRE_DE_RAMA_NUEVA NOMBRE_RAMA_DESDE_LA_QUE_PARTIRÁ -- crea una nueva rama a apartir de la que le indiquemos en el segundo parámetro
+
+	GIT PULL ORIGIN NOMBRE_DE_LA_RAMA_REMOTA -- Envía los cambios a un repositorio remoto en caso de tenerlo configurado
+	después tendíamos que hacer un "git chekout nombre_de_la_rama_remota" para seguir trabajando con ella
+
+
+

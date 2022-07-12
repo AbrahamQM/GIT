@@ -1,0 +1,10 @@
+				Bitbucket Pipelines
+https://bitbucket.org
+
+Es la versión de Bitbucket de CI/CD
+
+-Crea un proyecto (Go)
+
+-Hace Login en Bitbucket y crea un proyecto
+
+-Crea todo el proceso completo de CI/CD configurando el fichero de configuración .yml

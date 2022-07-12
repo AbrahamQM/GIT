@@ -1,0 +1,50 @@
+/**Ver un ejemplo de como es en el diagrama**/
+-Es un método de trabajo por específico.
+
+-Gitflow también es una extensión, que para Windows viene integrado en "Git for Windows" y,
+que nos facilitará el flujo de trabajo (control de cambios)
+
+-Como desventaja, los merges que hace son muy grandes y puede crear conflictos. 
+Puede detener un sistema como el de Integración y despliegue continuo (con herramientas automáticas).
+https://www.ilimit.com/blog/integracion-continua-entrega-continua-despliegue-continuo/
+
+**Con el comando "git flow", se nos mostrará el listado de subcomandos. Copio y pego:
+*****************************************************************************************
+Available subcommands are:
+   init      Initialize a new git repo with support for the branching model.
+   feature   Manage your feature branches.
+   bugfix    Manage your bugfix branches.
+   release   Manage your release branches.
+   hotfix    Manage your hotfix branches.
+   support   Manage your support branches.
+   version   Shows version information.
+   config    Manage your git-flow configuration.
+   log       Show log deviating from base branch.
+
+Try 'git flow <subcommand> help' for details.
+
+*****************************************************************************************
+
+
+
+1º Iniciamos git-flow con "git flow init"
+
+2º Respondemos a lo que nos pide
+
+3º Comenzamos a trabajar en la rama develop, e inicializamos y cambiamos a la rama feature_LoQueSea con "git flow feature start feature_LoQueSea"
+
+4º Trabajamos sobre esa característica, por ejemplo si fuera la parte de loggin de nuestra app, 
+haríamos toda la parte de loggin en la rama feature_loggin
+
+5º añadimos con "git add" los archivos que hayamos desarrollado, y hacemos el commit
+
+6º cerramos-mergeamos la rama con "git flow feature finish feature_LoQueSea"
+
+---Así se trabajaría con todo lo que necesitemos hacer tal como dice el diagrama:
+-según el tipo de rama si es una feature, release, hotfix, ...
+
+7º Cuando tengamos el desarrollo "acabado", crearemos la rama release con "git flow release start 0.1" 
+0.1 se refiere a la versión según se ve en el diagrama, irá cambiando
+
+8º Después de revisar todo, podemos cerrarla para que se una a la rama MAIN con "git flow release finish '0.1'"
+

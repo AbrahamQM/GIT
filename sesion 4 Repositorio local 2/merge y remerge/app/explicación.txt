@@ -1,0 +1,36 @@
+Seguimos en min -1:28:00 de la sesion
+
+
+
+---------------------MERGING------------UNIFICACIÓN DE RAMAS------------------------
+
+	GIT MERGE -- Para unificar ramas cuando trabajamos con otros usuarios en el mismo repositorio, SI ES NECESARIO CREARÁ UN NUEVO COMMIT
+
+	GIT REBASE -- Para unificar ramas cuando trabajamos solos en el  repositorio, NO CREARÁ UN NUEVO COMMIT
+
+
+--he creado esta carpeta con un archivo master1.txt 
+--he inicializado git y añadido master1.txt
+--he hecho commit 
+
+--he creado la rama primera-rama
+--he creado branch1.txt y branch2.txt
+--los he añadido con git add branch1.txt branch2.txt
+--he hecho commit en esta primera-rama
+
+-------------ahora las uno:
+	GIT MERGE RAMA_QUE_QUIERO_FUSIONAR -- unifica la rama que indiquemos con la rama actual (lo hice desde main)
+-si habían cambios en el main despues de crear la nueva rama, CREARÁ UN NUEVO COMMIT en el que las une.
+-si no habían cambios en el main, las une sin mas
+
+
+-------------uso de git rebase:
+--descripción: 
+Rebasar es el proceso de mover o combinar una secuencia de confirmaciones a una nueva confirmación base. 
+El cambio de base es más útil y fácil de visualizar en el contexto de un flujo de trabajo de bifurcación de características.
+
+	GIT REBASE RAMA_QUE_QUIERO_FUSIONAR -- unifica lla rama que indiquemos con la rama actual (lo hice desde main)
+-si habían cambios en el main despues de crear la nueva rama, las unificará respetando los cambios del main SIN HACER NINGÚN COMMIT.
+
+
+

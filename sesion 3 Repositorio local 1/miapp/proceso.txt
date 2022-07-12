@@ -1,0 +1,35 @@
+1º--creamos esta carpeta 'miapp' y dentro de esta un par de archivos de ejemplo
+
+2º--Inicializamos git:
+*desde la terminal (ubicados en la carpeta) ejecutamos: git init .
+-se crea la carpeta git automáticamente
+
+*si ejecutamos: git init --bare nombre_de_carpera_de_cambios  ********ver la carpeta repositorio externo**********
+-se creará una carpeta para guardar los cambios pero de forma que no es la carpeta sobre la que trabajamos, sino una copia externa
+(como si estuviéramos en la nube como pasa con github) es ideal por ejemplo para trabajar con una carpeta compartida.
+-sólo se enviarán los cambios al hacer "git push" 
+
+3º--Añadimos todos los ficheros al control de versiones:
+*ejecutamos: git add .
+
+4º--Configuramos git (localmente) para esta carpeta:
+*git config --list --local ------->mostrará la configuración actual para esta carpeta
+*git config --list --local ------->mostrará la configuración global (todo lo que haga este usuario)
+
+--Cambiar la configuración local:
+*****git config --local (nombre_de_lo_que_queremos_cambiar) "el valor que le queramos dar"*****
+*git config --local user.email "abrahamqm87@gmail.com" ----> cambiará el mail de el usuario
+*git config --local user.name "Abraham Quintana" ----> cambiará el nombre del usuario
+
+
+5º--Confirmamos los cambios:
+*git commit -a ----->meterá todos los cambios 
+a:Nos mostrará un "archivo con los cambios" 
+b:Le añadimos un comentario en la primera línea 
+c:Confirmamos el cambio pulsando: Esc + :wq ----------si escribimos :q! en lugar de :wq, saldrá sin guardar--------
+
+--Podremos ver los cambios haciendo:
+*git log
+
+6º--
+

@@ -1,0 +1,56 @@
+LA IMAGEN Continuous_Delivery_process_diagram.png INCLUYE TODO EL PIPELINE que se divide en CI y CD
+
+
+--Ventajas de CI/CD: Principalmente la automatización de todo el proceso puesta en funcionamiento y actualizaciones.
+
+--Software más utilzados: 
+-TeamCity https://www.jetbrains.com/es-es/teamcity/
+-Jenkins https://www.jenkins.io/
+-Circle CI https://circleci.com/
+-Travis ci https://travis-ci.org/
+
+--Durante la sesión veremos instalación y puesta en marcha de esos softwares.
+
+**************************************Integracion Continua CI************************************
+
+ES EL PROCESO POR EL CUAL NOSOTROS CONTINUAMENTE ESTAMOS INTEGRANDO EN UN PROYECTO TODOS NUESTROS CAMBIOS.
+
+-Ver diagrama en la imagen: Continuous_Delivery_process_diagram.png
+*El CI va de Delivery team->Version control->Build & unit test
+
+-Se puede hacer de forma manual o automática
+
+-Nuestro código tiene que estar versionado con un sistema de control de cambios VSC
+
+-Cada x tiempo verificamos los últimos cambios
+
+***De forma manual:
+1º Nos conectamos a un servidor de pruebas.
+2º Obtenemos el código fuente (git pull).
+3º Compilamos el código (min, aradle, campe, ...).
+4º Ejecutamos las pruebas (si hay).
+5º Ejecutamos el software.--Pasa a la parte de CD
+
+
+***De forma automática:
+Usando un software de Integración contínua (jenkins y los otros que hemos visto, Apache Hudson, Pipeline, ...)
+
+
+
+**************************************Despliegues o Entregas Continuas CD***********************************
+
+Continuous delivery---ES UN ENFOQUE EN EL QUE VAMOS A PASAR A PRODUCCIÓN RÁPIDAMENTE NUESTROS CAMBIOS 
+Por ejemplo GitFlow.
+
+-Ver diagrama en la imagen: Continuous_Delivery_process_diagram.png
+*El CD va una vez se han pasado "Build & unit test" e incluye los apartados:
+Automated acceptance tests-> User aceptance tests-> Release
+
+-Los cambios deben ser pequeños para evitar que se detenga el sistema. Se podrán fusionar fácilmente en los merges
+
+-Se utiliza sobre todo en aplicaciones web (tanto en front como en back)
+
+
+***De forma manual:
+1º Copiar los ficheros resultantes en el servidor de producción.
+2º Re-ejecutar el programa en cuestión.

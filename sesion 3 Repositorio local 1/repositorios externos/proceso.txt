@@ -1,0 +1,11 @@
+1º-Creo la carpeta actual "repositorio-externo" donde quiera, se suelen usar carpetas en la nube
+
+2º-Inicializo el repositorio externo
+*Ejecuto: git init --bare nombre_del_repositorio
+
+3º-Clonamos el codigo de la carpeta bare a la carpeta donde voy a guardar los cambios. (miapp-tipo-bare)
+*git clone de la carpeta_donde_trabajaremos -> git clone C:\Users\Abraham\IdeaProjects\GIT\miapp-tipo-bare
+
+4º-podemos hacer los cambios que queramos en la carpeta donde trabajaremos (miapp-tipo-bare)
+
+NO ME TERMINA DE FUNCIONAR. SE SUPONE QUE LO VOLVEREMOS A VER NUEVAMENTE COMO (TWO FACES GIT)

@@ -1,0 +1,31 @@
+EL CHERRY PICKING:
+Consiste en que en lugar de fusionar ramas enteras, vamos a funcionar commits entre ellos.
+	
+
+
+	USO BÁSICO
+---Estando en la rama con el commit al que queramos fusionar otro commit diferente,
+-ejecutamos "git cherry-pick nºDeCommitQueQueremosFusionar"
+-ej: git cherry-pick 4e5df
+--Eso hace que se meta el commit indicado a nuestra rama actual
+
+
+
+	HACER CHERRY PICK DE VARIOS COMMITS DETERMINADOS DE UNA VEZ
+---Estando en la rama con el commit al que queramos fusionar otro commit diferente,
+-ejecutamos "git cherry-pick nºDe1ºCommitQueQueremosFusionar nºDe2ºCommitQueQueremosFusionar etcétera"
+-ej: git cherry-pick 4e5df 3ft6d
+
+
+
+	HACER CHERRY PICK DE UN INTERVALO DE COMMITS AMBOS INCLUSIVE(con "^..")
+------Estando en la rama con el commit al que queramos fusionar otro commit diferente,
+-ejecutamos "git cherry-pick nºDe1ºCommitQueQueremosFusionar^..nºDeÚltimoCommitQueQueremosFusionar"
+-ej: git cherry-pick 4e5df^..3gd3t
+
+
+
+	HACER CHERRY PICK DE UN INTERVALO DE COMMITS SIN INCLUIR LOS INDICADOS(con "..")
+------Estando en la rama con el commit al que queramos fusionar otro commit diferente,
+-ejecutamos "git cherry-pick nºDelCommitAnteriorAl_1º_QueQueremosFusionar..nºDelCommitPosteriorAl_Último_QueQueremosFusionar"
+-ej: git cherry-pick 4e5df..3gd3t

@@ -1,0 +1,35 @@
+WorkFlow es una convención sobre la forma de trabajar con git.
+
+
+------------------------------Workflow normal: Update->changes->review->commit
+**update: Actualizamos los cambios en caso de haberlos con un "pull" o "fecht"
+**changes: Hacemos los cambios que necesitemos
+**review: Verificamos los cambios usando por ejemplo "git diff"
+**commit: Comiteamos los cambios a git
+
+
+
+------------------------------Forking Workflow: Clone->changes->pull request
+
+**clone: 
+-Clonamos el repositorio remoto "original" usando "Fork" a nuestra cuenta personal
+-Luego lo clonamos de nuestra cuanta personal a nuestro equipo usando: 
+git clone https://.....'dirección de nuestro repositorio remoto donde esta el fork del repositorio original'
+
+**Changes:
+-Hacemos los cambios que queramos en local
+-review
+-commit
+-Push a nuestro repositorio remoto donde esta el fork:
+     -si necesitamos un toqueN se hace con: 
+git push  https://TOKEN_PERSONAL@DIRECCIÓN_DONDE_ESTA_EL_REPOSITORIO_FORKEADO
+
+**Pull request:
+-Vamos a nuestro repositorio remoto que hemos forqueado
+-Pinchamos en "Contribute" -> "Open pull request" -> 'se cambiara al repositorio original automáticamente'
+-> "Create pull request" -> Ponemos un comentario descriptivo -> "Create pull request"
+
+
+
+--------- Una vez que hemos hecho la pull request, un usuario con privilegios de el repositorio original, 
+-puede simplemente aceptarla añadiendo otro comentario descriptivo 
